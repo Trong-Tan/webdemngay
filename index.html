@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-6xl">BELONG TOGETHER</h1>
+    </header>
+    <section>
+      <form id="myForm">
+        <div class="container">
+          <img
+            class="img-person"
+            src="img/img-person.jpg"
+            width="100"
+            height="100"
+            alt="ảnh bạn trai"
+          />
+
+          <div id="input-container-1" class="info">
+            <p class="text-black text-[24px]">Họ và tên:</p>
+            <p id="input-name-person1" class="text-black text-[24px]">
+              Trần Trọng Tấn
+            </p>
+            <p class="text-black text-[24px]">Tuổi:</p>
+            <p id="input-age-person1" class="text-black text-[24px]">20</p>
+            <p class="text-black text-[24px]">Giới tính:</p>
+            <p id="input-sex-person1" class="text-black text-[24px]">Nam</p>
+          </div>
+        </div>
+        <div class="container">
+          <img id="imgTym" src="img/tym.png" class="img-tym" alt="" />
+          <p id="countingTime" class="text-blue-100 text-[64px]"></p>
+          <div class="date-start">
+            <span id="clock" class="text-red-600 text-[32px]"></span>
+            <span id="datePresent" class="text-red-600 text-[32px]"></span>
+          </div>
+          <button
+            id="myButton"
+            onclick="startTimer()"
+            class="border-4 border-blue-600 rounded-full bg-blue-600 text-white w-32 h-12"
+            type="button"
+          >
+            Bắt đầu
+          </button>
+        </div>
+        <div class="container">
+          <img
+            class="img-person"
+            src="img/img-person.jpg"
+            width="100"
+            height="100"
+            alt="ảnh bạn trai"
+          />
+
+          <div id="input-container-2" class="info">
+            <p class="text-black text-[24px]">Họ và tên:</p>
+            <p id="input-name-person2" class="text-black text-[24px]">
+              Nguyễn Trọng Nam
+            </p>
+            <p class="text-black text-[24px]">Tuổi:</p>
+            <p id="input-age-person2" class="text-black text-[24px]">20</p>
+            <p class="text-black text-[24px]">Giới tính:</p>
+            <p id="input-sex-person2" class="text-black text-[24px]">Nữ</p>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <footer></footer>
+    <script>
+      const startButton = document.getElementById("myButton");
+      const clockElement = document.getElementById("clock");
+      // const datePresent = document.getElementById("datePresent");
+      const countingTime = document.getElementById("countingTime");
+      var dayLove = 0;
+      //Hiển thị Số ngày đã yêu
+      startButton.addEventListener("click", function () {
+        startCounting();
+        startClock();
+        startDatenow();
+        startButton.remove();
+      });
+      function startCounting() {
+        setInterval(updateLove, 3000); //Em làm ở đây là 3 giây cập nhật 1 lần, còn nếu tính theo ngày
+      } //thì set 2000 thành 86400 giây
+
+      function updateLove() {
+        dayLove = dayLove + 1;
+        countingTime.textContent = dayLove;
+      }
+
+      //Hiển thị giờ hiện tại
+      function startClock() {
+        setInterval(updateClock, 1000);
+      }
+
+      function updateClock() {
+        const date = new Date();
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+
+        const timeNow = `${hours}:${minutes}:${seconds}`;
+        clockElement.textContent = timeNow;
+      }
+
+      //Hiển thị ngày bắt đầu yêu
+      function startDatenow() {
+        const date = new Date();
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+
+        const timeNow = `${year}/${month}/${day}`;
+        datePresent.textContent = timeNow;
+      }
+    </script>
+  </body>
+</html>
