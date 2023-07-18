@@ -12,8 +12,6 @@
       <h1 class="text-6xl">BELONG TOGETHER</h1>
     </header>
     <section class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      <!-- <form id="myForm"> -->
-      <!-- <div class="container"> -->
       <img
         class="img-person col-start-1 row-start-1"
         src="img/img-person.jpg"
@@ -35,8 +33,6 @@
         <p class="text-black text-[24px]">Giới tính:</p>
         <p id="input-sex-person1" class="text-black text-[24px]">Nam</p>
       </div>
-      <!-- </div> -->
-      <!-- <div class="container"> -->
       <img
         id="imgTym"
         src="img/tym.png"
@@ -59,8 +55,6 @@
       >
         Bắt đầu
       </button>
-      <!-- </div> -->
-      <!-- <div class="container"> -->
       <img
         class="img-person col-start-3 row-start-1"
         src="img/img-person.jpg"
@@ -79,8 +73,6 @@
         <p class="text-black text-[24px]">Giới tính:</p>
         <p id="input-sex-person2" class="text-black text-[24px]">Nữ</p>
       </div>
-      <!-- </div> -->
-      <!-- </form> -->
     </section>
 
     <footer></footer>
@@ -98,7 +90,7 @@
         startButton.remove();
       });
       function startCounting() {
-        setInterval(updateLove, 5000); //Em làm ở đây là 3 giây cập nhật 1 lần, còn nếu tính theo ngày
+        setInterval(updateLove, 3000); //Em làm ở đây là 3 giây cập nhật 1 lần, còn nếu tính theo ngày
       } //thì set 2000 thành 86400 giây
 
       function updateLove() {

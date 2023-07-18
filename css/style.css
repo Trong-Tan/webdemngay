@@ -11,14 +11,11 @@ section {
   margin-top: 24px;
   margin-left: 80px;
   margin-right: 80px;
-  display: flex;
+  /* display: flex; */
 }
 .info {
   display: grid;
   gap: 16px;
-}
-form {
-  display: flex;
 }
 .img-person {
   border-radius: 50%;
@@ -43,10 +40,4 @@ form {
   display: grid;
   grid-template-columns: auto auto;
   gap: 20px;
-}
-
-.container {
-  display: grid;
-  gap: 10px;
-  place-items: center;
 }
