@@ -21,7 +21,6 @@ form {
   display: flex;
 }
 .img-person {
-  margin-left: 150px;
   border-radius: 50%;
 }
 .img-tym {
@@ -48,6 +47,6 @@ form {
 
 .container {
   display: grid;
-  gap: 10px; /* Khoảng cách giữa các phần tử */
+  gap: 10px;
   place-items: center;
 }
